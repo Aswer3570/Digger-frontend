@@ -1,0 +1,26 @@
+.footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 38px 20px 38px;
+
+	&__link {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&--active {
+
+			svg {
+				fill: var(--white) !important;
+			}
+		}
+
+		.footer__home-icon, .footer__family-star-icon, .footer__takeout-dining-icon {
+			width: 25px;
+			height: 25px;
+			flex-shrink: 0;
+			fill: var(--light-gray);
+		}
+	}
+}

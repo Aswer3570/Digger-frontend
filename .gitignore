@@ -1,0 +1,59 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite
+.vite/
+.vitepress/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Optional npm cache directory
+.npm/
+
+# Miscellaneous
+*.tgz
+*.zip
+*.tar.gz
+*.tar
+
+# ESLint cache
+.eslintcache

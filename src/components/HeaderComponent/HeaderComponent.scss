@@ -1,0 +1,94 @@
+.header {
+	padding: 20px 10px 20px 10px;
+
+	&__meter-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--white);
+		font-size: var(--font-size-22);
+		font-style: normal;
+		font-weight: var(--font-weight-bold);
+		line-height: normal;
+
+		.header__bolt-icon {
+			flex-shrink: 0;
+			fill: var(--golden-yellow);
+			margin: 0 8px 0 0;
+		}
+
+		.header__meter-max {
+			color: var(--medium-gray);
+			font-size: var(--font-size-16);
+			font-style: normal;
+			font-weight: var(--font-weight-medium);
+			line-height: normal;
+		}
+	}
+
+	&__tab-wrapper {
+
+		.header__tab-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 0 20px 0;
+
+			.header__tab-title {
+				color: var(--white);
+				font-size: var(--font-size-30);
+				font-style: normal;
+				font-weight: var(--font-weight-bold);
+				line-height: normal;
+				margin: 0;
+			}
+
+			.header__tab-premium-wrapper {
+				border-radius: 100px;
+				border: 1px solid var(--graphite-gray);
+				background: linear-gradient(90deg, var(--anthracite) 0%, var(--coal-gray) 100%);
+				padding: 4px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.header__tab-premium-title {
+					color: var(--white);
+					font-size: var(--font-size-13);
+					font-style: normal;
+					font-weight: var(--font-weight-semi-bold);
+					line-height: normal;
+					margin: 0 10px 0 10px;
+				}
+
+				.header__tab-premium-star-block {
+					border-radius: 50px;
+					background: var(--golden-yellow);
+					padding: 7px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					&--premium {
+						background-color: var(--warm-taupe) !important;
+					}
+
+					.header__tab-premium-star-icon {
+						fill: var(--anthracite-gray);
+						width: 14px;
+						height: 14px;
+					}
+				}
+			}
+		}
+
+		.header__tab-description {
+			color: var(--smoky-gray);
+			font-size: var(--font-size-14);
+			font-style: normal;
+			font-weight: var(--font-weight-medium);
+			line-height: normal;
+			margin: 0;
+		}
+	}
+}

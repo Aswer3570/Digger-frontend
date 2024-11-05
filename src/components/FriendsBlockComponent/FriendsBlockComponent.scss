@@ -1,0 +1,113 @@
+.friends-block {
+	margin: 0 10px 0 10px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		color: var(--white);
+		font-size: var(--font-size-20);
+		font-style: normal;
+		font-weight: var(--font-weight-semi-bold);
+		line-height: normal;
+		margin: 0;
+	}
+
+	&__wrapper {
+		margin: 20px 0 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		flex: 1;
+		flex-direction: column;
+
+		.friends-block__invited {
+			border-radius: 24px;
+			border: 1px solid var(--graphite-gray);
+			background: linear-gradient(90deg, var(--anthracite) 0%, var(--coal-gray) 100%);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 13px 17px 13px 17px;
+			margin: 0 0 15px 0;
+
+			&:last-child {
+				margin: 0 0 0 0;
+			}
+
+			&-check-icon {
+				stroke: var(--golden-yellow);
+				fill: transparent;
+				width: 27px;
+				height: 27px;
+				margin: 0 17px 0 0;
+			}
+
+			&-wrapper {
+				flex: 1;
+				margin: 0 17px 0 0;
+
+				.friends-block__invited-name {
+					color: var(--white);
+					font-size: var(--font-size-18);
+					font-style: normal;
+					font-weight: var(--font-weight-semi-bold);
+					line-height: normal;
+					margin: 0 0 5px 0;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				.friends-block__invited-date {
+					color: var(--smoky-gray);
+					font-size: var(--font-size-12);
+					font-style: normal;
+					font-weight: var(--font-weight-normal);
+					line-height: normal;
+					margin: 0;
+				}
+			}
+
+			&-reward {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 100px;
+				background: var(--golden-yellow);
+				padding: 5px 11px 5px 11px;
+
+				.friends-block__invited-bolt-icon {
+					fill: var(--anthracite-gray);
+					width: 8px;
+					height: 13px;
+					margin: 0 5px 0 0;
+				}
+
+				.friends-block__invited-reward-number {
+					color: var(--anthracite-gray);
+					font-size: var(--font-size-15);
+					font-style: normal;
+					font-weight: var(--font-weight-semi-bold);
+					line-height: normal;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&__empty-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
+
+		.friends-block__empty {
+			color: var(--steel-blue);
+			font-size: var(--font-size-13);
+			font-style: normal;
+			font-weight: var(--font-weight-semi-bold);
+			line-height: normal;
+			margin: 0;
+		}
+	}
+}

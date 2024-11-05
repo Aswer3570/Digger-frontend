@@ -1,0 +1,25 @@
+.loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+
+	&__loading-logo-icon {
+		width: 100px;
+		height: 100px;
+		stroke: var(--golden-yellow);
+		flex-shrink: 0;
+		animation: scaleAnimation 2s infinite;
+	}
+}
+
+@keyframes scaleAnimation {
+	0%, 100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+}

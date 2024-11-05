@@ -1,0 +1,72 @@
+@import url("./normalize.css");
+@import url("./fonts/Manrope/stylesheet.css");
+
+:root {
+	font-family: 'Manrope';
+	line-height: 1.5;
+	color-scheme: light dark;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// Color
+	--light-gray: #AEAEAE;
+	--golden-yellow: #FECE26;
+	--charcoal-black: #14161B;
+	--white: #FFF;
+	--medium-gray: #ADADAD;
+	--smoky-gray: #A9ABAD;
+	--graphite-gray: #354043;
+	--anthracite: #181E22;
+	--coral-red: #F55252;
+	--dark-chocolate: #433434;
+	--deep-sea-blue: #2E3A3D;
+	--light-cream: #FFEFB8;
+	--anthracite-gray: #414141;
+	--bright-lime-green: #69F552;
+	--platinum-gray: #929292;
+	--dark-brown-gray: #2B2A25;
+	--deep-sea-green: #1C272A;
+	--coal-gray: #212120;
+	--steel-blue: #374149;
+	--warm-taupe: #898474;
+	--dark-gold: #846C17;
+	--bright-red: #FF3939;
+
+	// Font Size
+	--font-size-30: 30px;
+	--font-size-25: 25px;
+	--font-size-22: 22px;
+	--font-size-21: 21px;
+	--font-size-20: 20px;
+	--font-size-18: 18px;
+	--font-size-17: 17px;
+	--font-size-16: 16px;
+	--font-size-15: 15px;
+	--font-size-14: 14px;
+	--font-size-13: 13px;
+	--font-size-12: 12px;
+	--font-size-10: 10px;
+
+	// Font Weight
+	--font-weight-bold: 700;
+	--font-weight-semi-bold: 600;
+	--font-weight-medium: 500;
+	--font-weight-normal: 400;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	user-select: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	background: linear-gradient(180deg, var(--deep-sea-green) 0%, var(--charcoal-black) 100%);
+}
