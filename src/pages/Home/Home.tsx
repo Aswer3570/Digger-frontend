@@ -19,11 +19,22 @@ function Home() {
 	const timerRef = useRef<NodeJS.Timeout | null>(null)
 	const { notification, showNotification } = useNotification()
 	const navigate = useNavigate()
+	
+	const telegramId: number = import.meta.env.PROD 
+		? webApp.initDataUnsafe.user?.id 
+		: import.meta.env.VITE_TEST_TELEGRAM_ID
+		
+	const isPremium: boolean = import.meta.env.PROD 
+		? webApp.initDataUnsafe.user.is_premium 
+		: true
+		
+	const [attemptsLeft, setAttemptsLeft] = useState<number>(0)
 
-	const telegramId: number = import.meta.env.PROD ? webApp.initDataUnsafe.user?.id : import.meta.env.VITE_TEST_TELEGRAM_ID
-	const isPremium: boolean = import.meta.env.PROD ? webApp.initDataUnsafe.user.is_premium ? true : false : true
-
-	const [attemptsLeft, setAttemptsLeft] = useState<number>(playerData?.attempts!)
+	useEffect(() => {
+		if (playerData?.attempts !== undefined) {
+			setAttemptsLeft(playerData.attempts)
+		}
+	}, [playerData?.attempts])
 
 	function handleAddressData(data: ExtendedBitcoinAddressData): void {
 		setAttemptsLeft(data.attempts)
@@ -31,7 +42,7 @@ function Home() {
 		if (timerRef.current) {
 			clearTimeout(timerRef.current)
 		}
-
+		
 		timerRef.current = setTimeout(() => {
 			const lastClickResult = {
 				telegramId: telegramId,
@@ -48,14 +59,17 @@ function Home() {
 	}
 
 	useEffect(() => {
-		socket.emit('getPlayerData', { telegramId, isPremium })
+		const fetchPlayerData = () => {
+			socket.emit('getPlayerData', { telegramId, isPremium })
+		}
 
+		fetchPlayerData()
+		
 		socket.on('getPlayerData', (playerData) => {
 			setPlayerData(playerData)
 
 			if (playerData.error) {
 				showNotification(playerData.error)
-
 				navigate('/error')
 			}
 
@@ -74,7 +88,7 @@ function Home() {
 	}, [telegramId, isPremium])
 
 	useEffect(() => {
-		if (!playerData) return
+		if (!playerData?.maximumAttempts) return
 
 		const intervalId = setInterval(() => {
 			if (attemptsLeft < playerData.maximumAttempts) {
@@ -83,7 +97,7 @@ function Home() {
 		}, 1000)
 
 		return () => clearInterval(intervalId)
-	}, [attemptsLeft, playerData])
+	}, [attemptsLeft, playerData?.maximumAttempts])
 
 	return (
 		<>

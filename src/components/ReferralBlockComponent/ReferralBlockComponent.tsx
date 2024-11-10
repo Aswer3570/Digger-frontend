@@ -26,7 +26,7 @@ const ReferralBlockComponent: React.FC<IReferralBlockComponent> = ({ referralCod
 	function openPopupInviteLink(): void {
 		impactOccurred('light')
 
-		window.open(`https://t.me/share/url?text=${INVITE_LINK_TEXT}&url=https://t.me/${BOT_LINK}?start=${referralCode}`)
+		window.open(`https://t.me/share/url?text=${t(INVITE_LINK_TEXT)}&url=https://t.me/${BOT_LINK}?start=${referralCode}`)
 	}
 
 	return (
