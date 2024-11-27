@@ -14,4 +14,7 @@ export default defineConfig({
 			include: ['buffer', 'crypto']
 		})
 	],
+	build: {
+		target: 'esnext'
+	}
 })
