@@ -5,6 +5,7 @@ import './FooterComponent.scss'
 import HomeIcon from '../../assets/home.svg'
 import FamilyStarIcon from '../../assets/family_star.svg'
 import TakeoutDiningIcon from '../../assets/takeout_dining.svg'
+import MonitoringIcon from '../../assets/monitoring.svg'
 
 function FooterComponent() {
 	const [impactOccurred, ,] = useHapticFeedback()
@@ -20,6 +21,14 @@ function FooterComponent() {
 	return (
 		<div className="footer">
 			<Link
+				to="/"
+				className={`footer__link ${locationReturn('/')}`}
+				onClick={() => vibration()}
+			>
+				<HomeIcon className="footer__home-icon" />
+			</Link>
+
+			<Link
 				to="/tasks"
 				className={`footer__link ${locationReturn('/tasks')}`}
 				onClick={() => vibration()}
@@ -28,11 +37,11 @@ function FooterComponent() {
 			</Link>
 
 			<Link
-				to="/"
-				className={`footer__link ${locationReturn('/')}`}
+				to="/upgrades"
+				className={`footer__link ${locationReturn('/upgrades')}`}
 				onClick={() => vibration()}
 			>
-				<HomeIcon className="footer__home-icon" />
+				<MonitoringIcon className="footer__takeout-dining-icon" />
 			</Link>
 
 			<Link

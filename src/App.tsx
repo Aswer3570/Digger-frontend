@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Invitation from './pages/Invitation/Invitation'
 import Tasks from './pages/Tasks/Tasks'
+import Upgrades from './pages/Upgrades/Upgrades'
 import Loading from './pages/Loading/Loading'
 import Error from './pages/Error/Error'
 import GameOver from './pages/GameOver/GameOver'
@@ -36,6 +37,11 @@ function App() {
 			<Route
 				path="/invitation"
 				element={<Invitation />}
+			/>
+
+			<Route
+				path="/upgrades"
+				element={<Upgrades />}
 			/>
 
 			<Route

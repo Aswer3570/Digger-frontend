@@ -1,0 +1,26 @@
+.upgrades {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+
+	&__cards-wrapper {
+		margin: 0 10px 0 10px;
+	}
+
+	&__empty-wrapper {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		justify-content: center;
+
+		.upgrades__empty-title {
+			color: var(--steel-blue);
+			font-size: var(--font-size-13);
+			font-style: normal;
+			font-weight: var(--font-weight-semi-bold);
+			line-height: normal;
+			margin: 0;
+		}
+	}
+}

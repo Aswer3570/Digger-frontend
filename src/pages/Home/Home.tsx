@@ -42,7 +42,7 @@ function Home() {
 		if (timerRef.current) {
 			clearTimeout(timerRef.current)
 		}
-		
+
 		timerRef.current = setTimeout(() => {
 			const lastClickResult = {
 				telegramId: telegramId,
@@ -64,7 +64,7 @@ function Home() {
 		}
 
 		fetchPlayerData()
-		
+
 		socket.on('getPlayerData', (playerData) => {
 			setPlayerData(playerData)
 

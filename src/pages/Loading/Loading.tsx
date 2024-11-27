@@ -13,7 +13,7 @@ import { useData } from '../../hooks/useData'
 function Loading() {
 	const { t } = useTranslation()
 	const webApp = useWebApp()
-	const { setPlayerData, setGetFriends, setGetTasks, setGetCompletedTasks } = useData()
+	const { setPlayerData, setGetFriends, setGetTasks, setGetCompletedTasks, setGetUpgrades } = useData()
 	const { notification, showNotification } = useNotification()
 	const navigate = useNavigate()
 
@@ -26,6 +26,7 @@ function Loading() {
 		socket.emit('getFriends', { telegramId })
 		socket.emit('getTasks')
 		socket.emit('getCompletedTasks', { telegramId })
+		socket.emit('getUpgrades')
 
 		socket.on('getPlayerData', (playerData) => {
 			setPlayerData(playerData)
@@ -87,6 +88,19 @@ function Loading() {
 			}
 		})
 
+		socket.on('getUpgrades', (getUpgrades) => {
+			setGetUpgrades(getUpgrades)
+
+			// Потом удалить
+			console.log(getUpgrades)
+
+			if (getUpgrades.error) {
+				showNotification(getUpgrades.error)
+
+				navigate('/error')
+			}
+		})
+
 		socket.on('connect_error', () => {
 			showNotification(t('Error connecting to server'))
 
@@ -104,6 +118,7 @@ function Loading() {
 			socket.off('getFriends')
 			socket.off('getTasks')
 			socket.off('getCompletedTasks')
+			socket.off('getUpgrades')
 			socket.off('connect_error')
 			socket.off('disconnect')
 		}

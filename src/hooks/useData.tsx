@@ -1,7 +1,13 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { IDataContextType, IPlayerData, IGetFriends, IGetTasks } from '../interfaces'
+import {
+	IDataContextType,
+	IPlayerData,
+	IGetFriends,
+	IGetTasks,
+	IGetUpgrades
+} from '../interfaces'
 
 const DataContext = createContext<IDataContextType | undefined>(undefined)
 
@@ -10,6 +16,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 	const [getFriends, setGetFriends] = useState<IGetFriends | null>(null)
 	const [getTasks, setGetTasks] = useState<IGetTasks[] | null>(null)
 	const [getCompletedTasks, setGetCompletedTasks] = useState<number[] | null>(null)
+	const [getUpgrades, setGetUpgrades] = useState<IGetUpgrades[] | null>(null)
 
 	return (
 		<DataContext.Provider value={{
@@ -23,7 +30,10 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 			setGetTasks,
 
 			getCompletedTasks,
-			setGetCompletedTasks
+			setGetCompletedTasks,
+
+			getUpgrades,
+			setGetUpgrades
 		}}>
 			{ children }
 		</DataContext.Provider>

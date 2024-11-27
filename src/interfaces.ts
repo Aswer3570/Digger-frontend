@@ -61,6 +61,9 @@ export interface IDataContextType {
 
 	getCompletedTasks: number[] | null
 	setGetCompletedTasks: Dispatch<SetStateAction<number[] | null>>
+
+	getUpgrades: IGetUpgrades[] | null
+	setGetUpgrades: Dispatch<SetStateAction<IGetUpgrades[] | null>>
 }
 
 export interface IGenerateBTCComponent {
@@ -102,4 +105,20 @@ export interface ITaskInitialStatus {
 export type UseNotificationType = {
 	notification: { description: string } | null;
 	showNotification: (description: string) => void;
+}
+
+export interface IPayTaskCardComponent {
+	title: string
+	description: string
+	price: number
+}
+
+export interface IGetUpgrades {
+	id: number
+	title: string
+	description: string
+	effectType: 'decrease_restore_rate' | 'increase_max_attempts' | 'infinite_attempts'
+	effectValue: number | 'unlimited'
+	show: boolean
+	cost: number
 }
