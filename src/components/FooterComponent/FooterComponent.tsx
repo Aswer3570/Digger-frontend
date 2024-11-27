@@ -19,7 +19,7 @@ function FooterComponent() {
 	}
 
 	return (
-		<div className="footer">
+		<footer className="footer">
 			<Link
 				to="/"
 				className={`footer__link ${locationReturn('/')}`}
@@ -51,7 +51,7 @@ function FooterComponent() {
 			>
 				<FamilyStarIcon className="footer__family-star-icon" />
 			</Link>
-		</div>
+		</footer>
 	)
 }
 
